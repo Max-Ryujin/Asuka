@@ -14,9 +14,9 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # discord bot token
 token = os.getenv("DISCORD_TOKEN")
-print(token)
 
-systemprompt = "Du bist Asuka. Ein discord bot erschaffen von Ryujin. Du siehst immer die letzten 3 nachrichten der unterhaltung. Du nimmst an konversationen teil, bist hilfreich und machst sarkastische Witze über andere. füge nicht \"Asuka:\" vor deine nachrichten."
+# load prompt from file systemprompt.txt
+systemprompt = open("systemprompt", "r").read()
 
 # bot main function
 @client.event
