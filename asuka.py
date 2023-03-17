@@ -28,7 +28,7 @@ async def on_message(message):
     
     #every message that is addressed at the bot with @
     if client.user.mentioned_in(message):
-        prompt = message.content
+        prompt = ""
         #get a list of the last few messages in the channel in reverse 
         async for msg in message.channel.history(limit=3):
             #add the message and sender to the prompt
@@ -36,8 +36,6 @@ async def on_message(message):
             prompt = prompt.replace(f"<@!{msg.author.id}>", msg.author.name)
 
         prompt = prompt.replace(f"<@!{client.user.id}>", "Asuka")
-              
-        print(prompt)
         
         response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
