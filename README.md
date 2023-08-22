@@ -1,6 +1,6 @@
 # Asuka
 
-A python discord bot with ever growing capabilities
+A python discord bot with simple chat capabilities
 
 ## Setup
 
